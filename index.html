@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MVP++ | Генератор паролей</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="fav-icon.svg" type="image/x-icon">
+
+</head>
+<body>
+    <div class="page-wrapper">
+        <h2 class="main-title">Password Generator</h2>
+        <p2 class="main-titles">By Tawsogar777</p2>
+    <div class="container">
+        <h1>Криптографически безопасная генерация (через window.crypto, а не эту хуйню с Math.random()).</h1>
+        
+        <div class="password-display" id="password">Нажми "Сгенерировать"</div>
+        
+        <div class="controls">
+            <div class="control-group">
+                <label for="length">
+                    Длина: <span class="length-value" id="lengthValue">16</span>
+                </label>
+                <input type="range" id="length" min="4" max="64" value="16">
+            </div>
+            
+            <div class="options">
+                <div class="option">
+                    <input type="checkbox" id="lowercase" checked>
+                    <label for="lowercase">a-z</label>
+                </div>
+                <div class="option">
+                    <input type="checkbox" id="uppercase" checked>
+                    <label for="uppercase">A-Z</label>
+                </div>
+                <div class="option">
+                    <input type="checkbox" id="numbers" checked>
+                    <label for="numbers">0-9</label>
+                </div>
+                <div class="option">
+                    <input type="checkbox" id="symbols" checked>
+                    <label for="symbols">!@#$%</label>
+                </div>
+            </div>
+            
+            <div class="strength-meter">
+                <div class="strength-bar" id="strengthBar"></div>
+            </div>
+        </div>
+        
+        <div class="buttons">
+            <button id="generate">
+                <img src="generate-icon.svg" alt="Генерировать" class="btn-icon">
+            </button>
+            <button id="copy">
+                <img src="copy-icon.svg" alt="Копировать" class="btn-icon">
+            </button>
+        </div>
+    </div>
+    
+    <div class="copy-notification" id="copyNotification">
+        Пароль скопирован в буфер!
+    </div>
+</div>
+    <script src="script.js"></script>
+</body>
+</html>
